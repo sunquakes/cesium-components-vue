@@ -1,6 +1,7 @@
 {
   "name": "cesium-components-vue",
   "version": "0.0.0",
+  "author": "Shing Rui <sunquakes@outlook.com>",
   "private": true,
   "main": "./dist/cesium-components-vue.umd.js",
   "module": "./dist/cesium-components-vue.es.js",

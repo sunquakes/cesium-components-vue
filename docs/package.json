@@ -1,0 +1,16 @@
+{
+  "name": "cesium-components-vue",
+  "version": "0.0.1",
+  "description": "A vue3.x component library of CesiumJS.",
+  "main": "index.js",
+  "repository": "https://cesium-components-vue.sunquakes.com",
+  "author": "Shing Rui <sunquakes@outlook.com>",
+  "license": "Apache-2.0 license",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.66"
+  }
+}
