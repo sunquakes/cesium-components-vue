@@ -25,6 +25,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "cesium": "^1.108.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
