@@ -1,3 +1,7 @@
+import CcTianViewer from './components/CcTianViewer'
+
 export default {
-  install: (app, options) => {}
+  install: (app) => {
+    app.component('cc-tian-viewer', CcTianViewer)
+  }
 }
