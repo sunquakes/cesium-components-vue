@@ -1,13 +1,17 @@
+console.log(1)
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-import { getDirname, path } from '@vuepress/utils'
+import { getDirname, path, fs } from '@vuepress/utils'
 
 const __dirname = getDirname(import.meta.url)
 
 export default defineUserConfig({
   title: 'Cesium Components Vue',
   description: 'A vue3.x component library of CesiumJS.',
-  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/images/logo.png' }],
+    ['link', { rel: 'stylesheet', href: '/Cesium/Widgets/widgets.css' }]
+  ],
   theme: defaultTheme({
     logo: '/images/logo.png',
     repo: 'sunquakes/cesium-components-vue',
@@ -51,5 +55,7 @@ export default defineUserConfig({
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components')
     })
-  ]
+  ],
+  templateDev: path.resolve(__dirname, './templates/dev.html'),
+  templateBuild: path.resolve(__dirname, './templates/build.html')
 })

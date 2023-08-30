@@ -6,6 +6,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import { resolve } from 'path'
 
+const CESIUM_BASE_URL = 'cesium/'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -18,10 +20,12 @@ export default defineConfig({
       // into your library
       external: ['vue'],
       output: {
+        intro: `window.CESIUM_BASE_URL = "${CESIUM_BASE_URL}";`,
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          cesium: 'Cesium'
         }
       }
     }
@@ -31,5 +35,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  define: {
+    CESIUM_BASE_URL: JSON.stringify(CESIUM_BASE_URL)
   }
 })
