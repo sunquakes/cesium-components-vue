@@ -1,4 +1,5 @@
 import { defineComponent, h } from 'vue'
+import { newInstance } from '../utils/viewer'
 
 export default defineComponent({
   render() {
@@ -22,9 +23,7 @@ export default defineComponent({
         maximumLevel: 18
       })
 
-      const viewer = new Cesium.Viewer('map', {
-        baseLayer: new Cesium.ImageryLayer(vec, {})
-      })
+      const viewer = newInstance(vec)
 
       this.$emit('input', viewer)
     }

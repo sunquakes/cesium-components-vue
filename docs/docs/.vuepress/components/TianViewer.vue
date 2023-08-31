@@ -14,7 +14,7 @@ export default {
 
 <style>
 .viewer {
-  width: 600px;
+  width: 100%;
   height: 300px;
 }
 </style>

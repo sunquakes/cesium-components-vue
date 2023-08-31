@@ -10,7 +10,6 @@ features:
   details: Design Vue components that allow users to easily add custom markers, annotations, and entities on the map.
 - title: Custom Popup
   details: Using Vue components as popups and provide rich and interactive information.
-  footer: MIT Licensed | Copyright © 2023-present Robert 
+  footer: Apache-2.0 license | Copyright © 2023-present Shing Rui 
 ---
 
-<TianViewer></TianViewer>

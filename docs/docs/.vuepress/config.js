@@ -1,4 +1,3 @@
-console.log(1)
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { getDirname, path, fs } from '@vuepress/utils'
@@ -24,7 +23,11 @@ export default defineUserConfig({
         editLinkText: 'Edit this page on GitHub',
         navbar: [{ text: 'Guide', link: '/guide/' }],
         sidebar: {
-          '/guide/': ['']
+          '/guide/': [
+            {
+              children: ['/guide/README.md', '/guide/viewer.md']
+            }
+          ]
         }
       },
       '/zh/': {
@@ -34,7 +37,11 @@ export default defineUserConfig({
         editLinkText: '在 GitHub 上编辑此页',
         navbar: [{ text: '指南', link: '/zh/guide/' }],
         sidebar: {
-          '/zh/guide/': ['']
+          '/zh/guide/': [
+            {
+              children: ['/zh/guide/README.md', '/zh/guide/viewer.md']
+            }
+          ]
         }
       }
     }
