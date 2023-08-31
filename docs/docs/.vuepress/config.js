@@ -21,11 +21,11 @@ export default defineUserConfig({
         selectLanguageText: 'Languages',
         selectLanguageAriaLabel: 'Languages',
         editLinkText: 'Edit this page on GitHub',
-        navbar: [{ text: 'Guide', link: '/guide/' }],
+        navbar: [{ text: 'Guide', link: '/guide/getting-started' }],
         sidebar: {
           '/guide/': [
             {
-              children: ['/guide/README.md', '/guide/viewer.md']
+              children: ['/guide/getting-started.md', '/guide/viewer.md']
             }
           ]
         }
@@ -35,11 +35,11 @@ export default defineUserConfig({
         selectLanguageText: '选择语言',
         selectLanguageAriaLabel: '选择语言',
         editLinkText: '在 GitHub 上编辑此页',
-        navbar: [{ text: '指南', link: '/zh/guide/' }],
+        navbar: [{ text: '指南', link: '/zh/guide/getting-started' }],
         sidebar: {
           '/zh/guide/': [
             {
-              children: ['/zh/guide/README.md', '/zh/guide/viewer.md']
+              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md']
             }
           ]
         }
