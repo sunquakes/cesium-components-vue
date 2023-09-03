@@ -11,31 +11,29 @@ Experience the seamless fusion of `Vue 3`'s cutting-edge capabilities and the im
 
 - Install `cesium-components-vue` via pnpm or yarn or npm
 
-<CodeGroup>
-  <CodeGroupItem title="PNPM">
+:::: code-group
+::: code-group-item PNPM
 
 ```bash:no-line-numbers
 pnpm install cesium-components-vue
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="YARN">
+:::
+::: code-group-item YARN
 
 ```bash:no-line-numbers
 yarn add cesium-components-vue
 ```
 
-  </CodeGroupItem>
-
-  <CodeGroupItem title="NPM" active>
+:::
+::: code-group-item NPM
 
 ```bash:no-line-numbers
 npm install cesium-components-vue
 ```
 
-  </CodeGroupItem>
-</CodeGroup>
+:::
+::::
 
 - Import the desired components from `cesium-components-vue` to embark on creating your next-generation geospatial applications.
 
@@ -48,26 +46,26 @@ Vue.use(CesiumComponentsVue)
 
 ## Features
 
-### Unified `Vue 3` Integration
+- Unified `Vue 3` Integration
 
 cesium-components-vue seamlessly bridges the world of `Vue 3` with the geospatial power of CesiumJS, enabling you to enrich your Vue applications with interactive geospatial components.
 
-### Reactive Geospatial Components
+- Reactive Geospatial Components
 
 Develop highly responsive geospatial applications that adapt to user interactions and dynamic data changes using `Vue 3`'s powerful reactivity system.
 
-### Versatile Component Suite
+- Versatile Component Suite
 
 Choose from a diverse collection of components including maps, markers, polygons, imagery layers, and more, each thoughtfully designed to elevate your geospatial projects.
 
-### Customization and Flexibility
+- Customization and Flexibility
 
 Leverage `Vue 3`'s composability and templating to effortlessly customize the appearance and behavior of your geospatial components according to your application's unique requirements.
 
-### Performance Harmony
+- Performance Harmony
 
 Benefit from the optimized performance of `CesiumJS` while maintaining `Vue 3`'s efficient rendering and reactivity, delivering smooth and engaging geospatial experiences.
 
-### In-Depth Documentation
+- In-Depth Documentation
 
 Our comprehensive documentation and real-world examples guide you through the process of seamlessly integrating cesium-components-vue into your `Vue 3` projects.

@@ -1,5 +1,5 @@
-export function newInstance(baseLayer: Cesium.ImageryProvider): Cesium.Viewer {
-  const viewer = new Cesium.Viewer('map', {
+export function newInstance(containerId: string, baseLayer: Cesium.ImageryProvider): Cesium.Viewer {
+  const viewer = new Cesium.Viewer(containerId, {
     baseLayerPicker: false,
     fullscreenButton: false,
     geocoder: false,

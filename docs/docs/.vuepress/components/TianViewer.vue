@@ -1,19 +1,32 @@
 <template>
   <div class="viewer">
-    <cc-tian-viewer :tk="'9ff8d6599c4e570ec469d56f2cfd185c'"></cc-tian-viewer>
+    <cc-tian-viewer v-model="viewer" :tk="tk" :id="containerId" :color="color"></cc-tian-viewer>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    value: { type: Object, default: undefined }
-  },
-}
+<script lang="ts" setup>
+import { ref, watch } from 'vue'
+
+defineProps({
+  color: Cesium.Color
+})
+
+const viewer = ref(null)
+const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
+const containerId = 'map'
+
+watch(viewer, async (newValue) => {
+  if (newValue !== null) {
+    newValue.camera.flyTo({
+      destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
+    });
+  }
+})
 </script>
 
 <style>
 .viewer {
+  margin-top: 10px;
   width: 100%;
   height: 300px;
 }

@@ -25,7 +25,7 @@ export default defineUserConfig({
         sidebar: {
           '/guide/': [
             {
-              children: ['/guide/getting-started.md', '/guide/viewer.md']
+              children: ['/guide/getting-started.md', '/guide/viewer.md', '/guide/popup.md']
             }
           ]
         }

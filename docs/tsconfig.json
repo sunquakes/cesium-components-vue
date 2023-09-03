@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+  },
+  "include": ["../interface/Cesium.d.ts", "./docs/.vuepress/components/*.vue"],
+  "exclude": ["node_modules"],
+}

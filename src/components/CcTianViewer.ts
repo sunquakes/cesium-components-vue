@@ -6,8 +6,17 @@ export default defineComponent({
     return h('div', { id: 'map', style: { width: '100%', height: '100%' } })
   },
   props: {
-    value: Object,
-    tk: String
+    modelValue: {
+      type: Cesium.Viewer
+    },
+    id: {
+      type: String,
+      default: 'map'
+    },
+    tk: {
+      type: String,
+      required: true
+    }
   },
   data() {
     return {}
@@ -23,9 +32,9 @@ export default defineComponent({
         maximumLevel: 18
       })
 
-      const viewer = newInstance(vec)
+      const viewer = newInstance(this.id, vec)
 
-      this.$emit('input', viewer)
+      this.$emit('update:modelValue', viewer)
     }
   }
 })
