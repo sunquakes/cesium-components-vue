@@ -6,6 +6,8 @@
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
+import { popup } from '../../../../src/utils/popup'
+import CustomPopup from './CustomPopup.vue'
 
 defineProps({
   color: Cesium.Color
@@ -20,7 +22,9 @@ watch(viewer, async (newValue) => {
   if (viewer !== null) {
     viewer.camera.flyTo({
       destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
-    });
+    })
+    // Add the popup to the viewer.
+    popup(viewer, 'cc-popup', CustomPopup, [120.74210547619033, 31.275160096694293, 0], {})
   }
 })
 </script>
