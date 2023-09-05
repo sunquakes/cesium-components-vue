@@ -1,38 +1,22 @@
 <template>
-  <div class="viewer">
-    <cc-tian-viewer v-model="viewer" :tk="tk" :id="containerId" :color="color"></cc-tian-viewer>
+  <div class="cc-popup">
+    {{ content }}
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref, watch } from 'vue'
-import { popup } from '../../../../src/utils/popup'
-import CustomPopup from './CustomPopup.vue'
-
-defineProps({
-  color: Cesium.Color
-})
-
-const viewer = ref(null)
-const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
-const containerId = 'map'
-
-watch(viewer, async (newValue) => {
-  const viewer =  newValue as Cesium.Viewer
-  if (viewer !== null) {
-    viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
-    })
-    // Add the popup to the viewer.
-    popup(viewer, 'cc-popup', CustomPopup, [120.74210547619033, 31.275160096694293, 0], {})
+<script lang="ts">
+export default {
+  data() {
+    return { content: 'Hello World' }
   }
-})
+}
 </script>
 
 <style>
-.viewer {
-  margin-top: 10px;
-  width: 100%;
-  height: 300px;
+.cc-popup {
+  font-weight: bold;
+  padding: 10px 10px;
+  color: white;
+  background-color: aqua;
 }
 </style>

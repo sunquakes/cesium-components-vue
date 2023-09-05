@@ -23,7 +23,8 @@ type Coordinate = Array<number>
 
 interface PopupInterface {
   moveTo(coordinate: Coordinate): void
-  moveToCartesian3(coordinate: Cesium.Cartesian3): void
+  moveToCartesian3(cartesian3: Cesium.Cartesian3): void
+  getComponent(): ComponentPublicInstance
   close(): void
 }
 
@@ -41,7 +42,7 @@ class Popup implements PopupInterface {
   /**
    * Popup component instance.
    */
-  componentInstance: ComponentPublicInstance
+  component: ComponentPublicInstance
 
   /**
    * Popup style.
@@ -68,7 +69,7 @@ class Popup implements PopupInterface {
       offsetX: 0,
       offsetY: 0
     }
-    this.componentInstance = this.getComponentInstance(containerId, component)
+    this.component = this.setComponent(containerId, component)
     this.coordinate = coordinate
     this.options = {
       ...defaultOptions,
@@ -83,7 +84,7 @@ class Popup implements PopupInterface {
    * @param component
    * @returns
    */
-  private getComponentInstance(containerId: string, component: Component): ComponentPublicInstance {
+  private setComponent(containerId: string, component: Component): ComponentPublicInstance {
     let containerElement = document.getElementById(containerId)
     if (containerElement == undefined) {
       containerElement = document.createElement('div')
@@ -95,6 +96,18 @@ class Popup implements PopupInterface {
     return app.mount(`#${containerId}`)
   }
 
+  /**
+   * Get the popup component instance.
+   * @returns
+   */
+  getComponent() {
+    return this.component
+  }
+
+  /**
+   * Get popup dom.
+   * @returns
+   */
   private getElement(): HTMLElement | null {
     const element = document.getElementById(this.containerId)
     return element
