@@ -3,7 +3,7 @@ import { newInstance } from '../utils/viewer'
 
 export default defineComponent({
   render() {
-    return h('div', { id: 'map', style: { width: '100%', height: '100%' } })
+    return h('div', { id: this.id, style: { width: '100%', height: '100%' } })
   },
   props: {
     modelValue: {

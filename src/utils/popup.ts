@@ -23,8 +23,6 @@ type Coordinate = Array<number>
 
 interface PopupInterface {
   moveTo(coordinate: Coordinate): void
-  moveToCartesian3(cartesian3: Cesium.Cartesian3): void
-  getComponent(): ComponentPublicInstance
   close(): void
 }
 
@@ -45,6 +43,11 @@ class Popup implements PopupInterface {
   component: ComponentPublicInstance
 
   /**
+   * Popup component props
+   */
+  props: object | {}
+
+  /**
    * Popup style.
    */
   options: Options
@@ -58,9 +61,11 @@ class Popup implements PopupInterface {
     viewer: Cesium.Viewer,
     containerId: string,
     component: Component,
+    props: object,
     coordinate: Coordinate,
     options: Options
   ) {
+    this.props = props
     this.viewer = viewer
     this.containerId = containerId || 'cc-popup'
     const defaultOptions: Options = {
@@ -69,7 +74,7 @@ class Popup implements PopupInterface {
       offsetX: 0,
       offsetY: 0
     }
-    this.component = this.setComponent(containerId, component)
+    this.component = this.getComponent(containerId, component)
     this.coordinate = coordinate
     this.options = {
       ...defaultOptions,
@@ -84,7 +89,10 @@ class Popup implements PopupInterface {
    * @param component
    * @returns
    */
-  private setComponent(containerId: string, component: Component): ComponentPublicInstance {
+  private getComponent(containerId: string, component: Component): ComponentPublicInstance {
+    if (this.component) {
+      return this.component
+    }
     let containerElement = document.getElementById(containerId)
     if (containerElement == undefined) {
       containerElement = document.createElement('div')
@@ -92,16 +100,8 @@ class Popup implements PopupInterface {
       const viewerElement = this.viewer.container as HTMLElement
       viewerElement.appendChild(containerElement)
     }
-    const app = createApp(component)
+    const app = createApp(component, this.props || {})
     return app.mount(`#${containerId}`)
-  }
-
-  /**
-   * Get the popup component instance.
-   * @returns
-   */
-  getComponent() {
-    return this.component
   }
 
   /**
@@ -117,7 +117,7 @@ class Popup implements PopupInterface {
    * Listen the postRender event and move the popup to the coordinate.
    * @returns
    */
-  doPrePost(): boolean {
+  private doPrePost(): boolean {
     const popup = this
 
     if (!popup.getElement()) {
@@ -125,8 +125,9 @@ class Popup implements PopupInterface {
       popup.viewer.scene.postRender.removeEventListener(this.doPrePost, this)
       return false
     }
-
-    this.moveTo(this.coordinate)
+    const coordinate = this.coordinate
+    const cartesian3 = Cesium.Cartesian3.fromDegrees(coordinate[0], coordinate[1], coordinate[2])
+    this.moveToCartesian3(cartesian3)
     return false
   }
 
@@ -134,6 +135,7 @@ class Popup implements PopupInterface {
    * Move the popup to the coordinate.
    */
   moveTo(coordinate: Coordinate): void {
+    this.coordinate = coordinate
     const cartesian3 = Cesium.Cartesian3.fromDegrees(coordinate[0], coordinate[1], coordinate[2])
     this.moveToCartesian3(cartesian3)
   }
@@ -142,7 +144,7 @@ class Popup implements PopupInterface {
    * Move the popup to the cartesian3.
    * @param cartesian3
    */
-  moveToCartesian3(cartesian3: Cesium.Cartesian3): void {
+  private moveToCartesian3(cartesian3: Cesium.Cartesian3): void {
     const coordinate = Cesium.SceneTransforms.wgs84ToWindowCoordinates(
       this.viewer.scene,
       cartesian3
@@ -201,8 +203,9 @@ export function popup(
   viewer: Cesium.Viewer,
   containerId: string,
   component: Component,
+  props: Object,
   coordinate: Coordinate,
   options: Options
 ) {
-  return new Popup(viewer, containerId, component, coordinate, options)
+  return new Popup(viewer, containerId, component, props, coordinate, options)
 }

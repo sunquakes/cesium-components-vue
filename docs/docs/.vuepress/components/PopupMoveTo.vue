@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref, watch } from 'vue'
-import { popup } from 'cesium-components-vue'
+import { popup } from '../../../../src/index'
 import Popup from './Popup.vue'
 
 defineProps({
@@ -15,7 +15,7 @@ defineProps({
 
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
-const containerId = 'update-value'
+const containerId = 'move-to'
 
 watch(viewer, async (newValue) => {
   const viewer = newValue as Cesium.Viewer
@@ -24,14 +24,10 @@ watch(viewer, async (newValue) => {
       destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
     })
     // Add the popup to the viewer.
-    const value = reactive({
-      msg: 'Hello World'
-    })
-    const props = {
-      modelValue: value
-    }
-    popup(viewer, 'update-value-popup', Popup, props, [120.74210547619033, 31.275160096694293, 0], {})
-    value.msg = 'Hello China'
+    const p = popup(viewer, 'move-to-popup', Popup, {}, [120.74210547619033, 31.275160096694293, 0], {})
+    setTimeout(() => {
+      p.moveTo([120.75210547619033, 31.275160096694293, 0])
+    }, 5000)
   }
 })
 </script>

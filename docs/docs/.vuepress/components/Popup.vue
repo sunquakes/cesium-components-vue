@@ -1,15 +1,20 @@
 <template>
   <div class="cc-popup">
-    {{ content }}
+    {{ modelValue.msg }}
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return { content: 'Hello World' }
+<script lang="ts" setup>
+defineProps({
+  modelValue: {
+    type: Object,
+    default: () => {
+      return {
+        msg: 'Hello World'
+      }
+    }
   }
-}
+})
 </script>
 
 <style>

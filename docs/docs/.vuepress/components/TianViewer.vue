@@ -13,7 +13,7 @@ defineProps({
 
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
-const containerId = 'map'
+const containerId = 'tian-viewer'
 
 watch(viewer, async (newValue) => {
   const viewer =  newValue as Cesium.Viewer
