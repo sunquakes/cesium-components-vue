@@ -3,6 +3,10 @@ lang: en-US
 title: Viewer
 ---
 
+::: tip type
+Component
+:::
+
 ## Map World
 
 ### Default Color

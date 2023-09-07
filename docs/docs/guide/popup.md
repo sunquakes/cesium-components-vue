@@ -3,6 +3,10 @@ lang: en-US
 title: Popup
 ---
 
+::: tip type
+Function
+:::
+
 ## Example
 
 <PopupDefault />
