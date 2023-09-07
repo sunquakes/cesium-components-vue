@@ -1,4 +1,3 @@
-console.log(1)
 import { defineUserConfig, defaultTheme } from 'vuepress'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 import { getDirname, path, fs } from '@vuepress/utils'
@@ -22,9 +21,13 @@ export default defineUserConfig({
         selectLanguageText: 'Languages',
         selectLanguageAriaLabel: 'Languages',
         editLinkText: 'Edit this page on GitHub',
-        navbar: [{ text: 'Guide', link: '/guide/' }],
+        navbar: [{ text: 'Guide', link: '/guide/getting-started' }],
         sidebar: {
-          '/guide/': ['']
+          '/guide/': [
+            {
+              children: ['/guide/getting-started.md', '/guide/viewer.md', '/guide/popup.md']
+            }
+          ]
         }
       },
       '/zh/': {
@@ -32,9 +35,13 @@ export default defineUserConfig({
         selectLanguageText: '选择语言',
         selectLanguageAriaLabel: '选择语言',
         editLinkText: '在 GitHub 上编辑此页',
-        navbar: [{ text: '指南', link: '/zh/guide/' }],
+        navbar: [{ text: '指南', link: '/zh/guide/getting-started' }],
         sidebar: {
-          '/zh/guide/': ['']
+          '/zh/guide/': [
+            {
+              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md']
+            }
+          ]
         }
       }
     }

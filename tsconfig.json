@@ -11,6 +11,6 @@
       "path": "./tsconfig.vitest.json"
     }
   ],
-  "include": ["src/interface", "src"],
+  "include": ["interface", "src"],
   "exclude": ["node_modules", "**/dist"]
 }
