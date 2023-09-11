@@ -57,17 +57,18 @@ export default class PolylineArrowsMaterialProperty implements Cesium.MaterialPr
   }
 }
 
-// @ts-ignore
-Cesium.Material._materialCache.addMaterial(type, {
-  fabric: {
-    type: type,
-    uniforms: {
-      color: new Cesium.Color(255.0, 255.0, 255.0, 1),
-      image: image,
-      length: 0,
-      scale: 0
-    },
-    source: `czm_material czm_getMaterial(czm_materialInput materialInput)
+if (process.env.COMMON) {
+  // @ts-ignore
+  Cesium.Material._materialCache.addMaterial(type, {
+    fabric: {
+      type: type,
+      uniforms: {
+        color: new Cesium.Color(255.0, 255.0, 255.0, 1),
+        image: image,
+        length: 0,
+        scale: 0
+      },
+      source: `czm_material czm_getMaterial(czm_materialInput materialInput)
       {
         czm_material material = czm_getDefaultMaterial(materialInput);
         vec2 st = materialInput.st;
@@ -81,15 +82,16 @@ Cesium.Material._materialCache.addMaterial(type, {
         }
         return material;
       }`,
-    components: {
-      alpha: 'color.a',
-      diffuse: 'color.rgb'
+      components: {
+        alpha: 'color.a',
+        diffuse: 'color.rgb'
+      }
+    },
+    translucent: function (material?: Cesium.Material) {
+      return true
     }
-  },
-  translucent: function (material?: Cesium.Material) {
-    return true
-  }
-})
+  })
+}
 
 /**
  * Get the polyline length.

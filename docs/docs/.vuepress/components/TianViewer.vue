@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
 
-defineProps({
+typeof Cesium !== 'undefined' ?? defineProps({
   color: Cesium.Color
 })
 

@@ -7,7 +7,7 @@ export default defineComponent({
   },
   props: {
     modelValue: {
-      type: Cesium.Viewer
+      type: typeof Cesium !== 'undefined' ? Cesium.Viewer : undefined
     },
     id: {
       type: String,
