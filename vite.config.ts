@@ -20,7 +20,6 @@ export default defineConfig({
       // into your library
       external: ['vue'],
       output: {
-        intro: `window.CESIUM_BASE_URL = "${CESIUM_BASE_URL}";`,
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
