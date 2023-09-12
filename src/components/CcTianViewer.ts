@@ -28,7 +28,7 @@ export default defineComponent({
     init() {
       const vec = new Cesium.UrlTemplateImageryProvider({
         subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
-        url: `http://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=${this.tk}`,
+        url: `https://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=${this.tk}`,
         maximumLevel: 18
       })
 
