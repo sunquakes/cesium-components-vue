@@ -1,4 +1,4 @@
-English | [🇨🇳中文](README_ZH.md)
+[English](README.md) | 🇨🇳中文
 
 # Cesium Components Vue
 
@@ -9,11 +9,11 @@ English | [🇨🇳中文](README_ZH.md)
     <img alt="cesium-components-vue" src="https://img.shields.io/github/v/release/sunquakes/cesium-components-vue">
 </p>
 
-## Documentation
+## 文档 
 
-Visit [cesium-components-vue.sunquakes.com](https://cesium-components-vue.sunquakes.com).
+访问 [cesium-components-vue.sunquakes.com](https://cesium-components-vue.sunquakes.com).
 
-## Getting Started
+## 开始
 
 ```bash
 pnpm install cesium-components-vue

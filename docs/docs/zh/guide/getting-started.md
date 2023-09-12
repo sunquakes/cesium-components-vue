@@ -7,6 +7,19 @@ title: 开始
 
 通过 `cesium-components-vue` 融合 `Vue 3` 的先进功能与 `CesiumJS` 的沉浸式地理可视化特性。`cesium-components-vue` 能够轻松地将动态地理空间元素无缝集成到 `Vue 3` 项目中，呈现出引人入胜的交互式体验。
 
+## 安装Cesium
+
+- 从github下载Cesium [https://github.com/CesiumGS/cesium/releases](https://github.com/CesiumGS/cesium/releases)。
+
+- 解压后将Cesium目录拷贝到/public目录。
+
+- 将Cesium的js和css文件引入到index.html。
+
+```html
+<script type="text/javascript" src="/Cesium/Cesium.js"></script>
+<link rel="stylesheet" href="/Cesium/Widgets/widgets.css" />
+```
+
 ## 开始使用
 
 - 通过 `pnpm` 、`yarn` 或 `npm` 安装 `cesium-components-vue`

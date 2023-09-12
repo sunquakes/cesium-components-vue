@@ -7,6 +7,19 @@ title: Getting Started
 
 Experience the seamless fusion of `Vue 3`'s cutting-edge capabilities and the immersive geospatial features of `CesiumJS` through cesium-components-vue. Our library empowers you to effortlessly integrate dynamic geospatial elements into your `Vue 3` projects, delivering captivating interactive experiences.
 
+## Install Cesium
+
+- Download cesium from github [https://github.com/CesiumGS/cesium/releases](https://github.com/CesiumGS/cesium/releases)
+
+- Move Cesium folder to the /public.
+
+- Import Cesium js and css file in index.html.
+
+```html
+<script type="text/javascript" src="/Cesium/Cesium.js"></script>
+<link rel="stylesheet" href="/Cesium/Widgets/widgets.css" />
+```
+
 ## Getting Started
 
 - Install `cesium-components-vue` via pnpm or yarn or npm
