@@ -27,13 +27,13 @@ jobs:
 
       - name: Build Library 
         run: |
-          pnpm install
+          pnpm i
           pnpm build
 
       - name: Install Vuepress and Build Docs 
         run: | 
           cd docs
-          pnpm install
+          pnpm i
           pnpm docs:build
 
       - name: Deploy to GitHub Pages
