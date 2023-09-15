@@ -1,19 +1,19 @@
 ---
-lang: en-US
-title: Material
+lang: zh-CN
+title: 材料
 ---
 
-::: tip type
+::: tip 类型
 Class
 :::
 
-## Polyline
+## 折线
 
 ### PolylineArrowsMaterial
 
 <PolylineArrowsMaterial />
 
-::: details Click me to view the codes
+::: details 点击查看代码
 
 ```vue
 <template>
@@ -27,7 +27,7 @@ import { ref, watch } from 'vue'
 import { PolylineArrowsMaterialProperty } from 'cesium-components-vue'
 
 const viewer = ref(null)
-const tk = 'map-world-tk' // Obtained from `Map World` website.
+const tk = 'map-world-tk' // 从天地图官网获取
 const containerId = 'default'
 
 watch(viewer, async (newValue) => {
@@ -37,7 +37,7 @@ watch(viewer, async (newValue) => {
       destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
     })
 
-    // Add the polyline to the viewer.
+    // 添加折线到视图
     const coordinates = [
       [120.73110547619033, 31.274160096694293],
       [120.75110547619033, 31.274160096694293]
@@ -69,10 +69,10 @@ watch(viewer, async (newValue) => {
 
 :::
 
-#### Constructor Parameters
+#### 构造函数参数
 
-| Name      | Type                     | Default | Description                                                     |
-| --------- | ------------------------ | ------- | --------------------------------------------------------------- |
-| value     | Cesium.Viewer            |         | `required` `Cesium.Viewer` instance that polyline displayed in. |
-| positions | Array<Cesium.Cartesian3> |         | `required` Polyline positions.                                  |
-| color     | Cesium.Color             |         | `required` Defined the color of the polyline.                   |
+| Name      | Type                     | Default | Description                      |
+| --------- | ------------------------ | ------- | -------------------------------- |
+| value     | Cesium.Viewer            |         | `required` 展示折线的视图实例    |
+| positions | Array<Cesium.Cartesian3> |         | `required` 折线的positions属性值 |
+| color     | Cesium.Color             |         | `required` 折线的颜色            |

@@ -28,7 +28,7 @@ import { popup } from 'cesium-components-vue'
 import Popup from './Popup.vue'
 
 const viewer = ref(null)
-const tk = 'map-world-tk'
+const tk = 'map-world-tk' // 从天地图官网获取
 const containerId = 'default'
 
 watch(viewer, async (newValue) => {

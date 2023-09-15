@@ -39,7 +39,7 @@ export default defineUserConfig({
         sidebar: {
           '/zh/guide/': [
             {
-              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md', '/zh/guide/popup.md']
+              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md', '/zh/guide/popup.md', '/zh/guide/material.md']
             }
           ]
         }
