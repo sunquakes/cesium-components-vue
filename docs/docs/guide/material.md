@@ -48,8 +48,8 @@ watch(viewer, async (newValue) => {
     const entity = new Cesium.Entity({
       polyline: {
         positions: positions,
-        material: new PolylineArrowsMaterialProperty(viewer, positions, Cesium.Color.SKYBLUE),
-        width: 10,
+        material: new PolylineArrowsMaterialProperty(viewer, positions, Cesium.Color.RED),
+        width: 20,
         clampToGround: true
       }
     })

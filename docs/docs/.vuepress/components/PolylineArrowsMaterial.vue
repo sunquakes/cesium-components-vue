@@ -31,9 +31,9 @@ watch(viewer, async (newValue) => {
         material: new PolylineArrowsMaterialProperty(
           viewer,
           positions,
-          Cesium.Color.SKYBLUE
+          Cesium.Color.RED
         ),
-        width: 10,
+        width: 20,
         clampToGround: true,
       }
     })
