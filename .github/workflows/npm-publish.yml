@@ -1,45 +1,30 @@
 name: Npm Publish
 
 on:
-  # trigger deployment on every push to main branch
-  push:
-    branches: [main]
-  # trigger deployment manually
-  workflow_dispatch:
+  release:
+    types: [created]
 
 jobs:
-  docs:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 0
-      
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+          node-version: 20
+      - run: npm ci
+      - run: npm test
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 18
-    
-      - name: Install Pnpm 
-        run: |
-          npm install -g pnpm
-
-      - name: Build Library 
-        run: |
-          pnpm install
-          pnpm build
-
-      - name: Install Vuepress and Build Docs 
-        run: | 
-          cd docs
-          pnpm install
-          pnpm docs:build
-
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: gh-pages
-          build_dir: docs/docs/.vuepress/dist
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

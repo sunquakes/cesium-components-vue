@@ -25,7 +25,7 @@ export default defineUserConfig({
         sidebar: {
           '/guide/': [
             {
-              children: ['/guide/getting-started.md', '/guide/viewer.md', '/guide/popup.md']
+              children: ['/guide/getting-started.md', '/guide/viewer.md', '/guide/popup.md', '/guide/material.md']
             }
           ]
         }
@@ -39,7 +39,7 @@ export default defineUserConfig({
         sidebar: {
           '/zh/guide/': [
             {
-              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md', '/zh/guide/popup.md']
+              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md', '/zh/guide/popup.md', '/zh/guide/material.md']
             }
           ]
         }
