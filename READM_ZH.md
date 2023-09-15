@@ -27,13 +27,15 @@ pnpm install cesium-components-vue
 
 <p>
     <a target="_blank" href="https://cesium.sunquakes.com/zh/guide/viewer.html#default-color">
-        <img width="300" src="images/map-world.png" />
+        <img width="49%" src="images/map-world.png" />
     </a>
     <a target="_blank" href="https://cesium.sunquakes.com/zh/guide/popup.html#example">
-        <img width="300" src="images/popup.png" />
+        <img width="49%" src="images/popup.png" />
     </a>
+<p>
+</p>
     <a target="_blank" href="https://cesium.sunquakes.com/zh/guide/material.html#polyline">
-        <img width="300" src="images/polyline-arrors.png" />
+        <img width="49%" src="images/polyline-arrors.png" />
     </a>
 </p>
 
