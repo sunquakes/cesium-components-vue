@@ -2,39 +2,45 @@ name: Create Release
 
 on:
   push:
-    tags: 
+    tags:
       - '*.*.*'
 
 jobs:
-  docs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
-    
-      - name: Install Pnpm 
+
+      - name: Install Pnpm
         run: |
           npm install -g pnpm
 
-      - name: Build Library 
+      - name: Build Library
         run: |
           pnpm i
           pnpm build
-          zip --junk-paths cesium-components-vue ./dist/*
-        
-      - name: Extract Changelog 
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Extract Changelog
         id: extract_changelog
         run: |
+          zip --junk-paths cesium-components-vue ./dist/*
+
           # Set the delimiter
           delimiter="---"
-    
+
           # Read the file and extract the first part
           while read -r line
           do
@@ -58,12 +64,41 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
-        id: upload-release-asset 
+        id: upload-release-asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./cesium-components-vue.zip
           asset_name: cesium-components-vue.zip
           asset_content_type: application/zip
+
+  docs:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Vuepress and Build Docs
+        run: |
+          cd docs
+          pnpm i
+          pnpm docs:build
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: docs/docs/.vuepress/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Publish to NPM
+        run: pnpm publish
+        env:
+          PNPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
