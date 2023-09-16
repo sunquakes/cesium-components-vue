@@ -3,7 +3,6 @@
   "type": "module",
   "version": "0.0.1",
   "author": "Shing Rui <sunquakes@outlook.com>",
-  "private": true,
   "main": "./dist/cesium-components-vue.js",
   "module": "./dist/cesium-components-vue.js",
   "exports": {
