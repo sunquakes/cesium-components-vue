@@ -69,15 +69,15 @@ watch(viewer, async (newValue) => {
 
 <div>
     <a target="_blank" href="https://cesium.sunquakes.com/zh/guide/viewer.html#default-color">
-        <img width="49%" src="images/map-world.png" />
+        <img width="49%" src="https://cesium.sunquakes.com/images/examplesmap-world.png" />
     </a>
     <a target="_blank" href="https://cesium.sunquakes.com/zh/guide/popup.html#example">
-        <img width="49%" src="images/popup.png" />
+        <img width="49%" src="https://cesium.sunquakes.com/images//examplespopup.png" />
     </a>
 </div>
 <div>
     <a target="_blank" href="https://cesium.sunquakes.com/zh/guide/material.html#polyline">
-        <img width="49%" src="images/polyline-arrors.png" />
+        <img width="49%" src="https://cesium.sunquakes.com/images/examples/polyline-arrors.png" />
     </a>
 </div>
 
