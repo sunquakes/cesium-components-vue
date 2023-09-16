@@ -70,7 +70,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Publish to NPM
-        run: pnpm publish
+        run: pnpm publish --no-git-checks
         env:
           PNPM_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
