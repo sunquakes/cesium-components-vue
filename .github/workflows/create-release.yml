@@ -27,6 +27,7 @@ jobs:
         run: |
           pnpm i
           pnpm build
+          zip --junk-paths cesium-components-vue ./dist/*
         
       - name: Extract Changelog 
         id: extract_changelog
@@ -63,6 +64,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./dist/*
+          asset_path: ./cesium-components-vue.zip
           asset_name: cesium-components-vue.zip
           asset_content_type: application/zip
