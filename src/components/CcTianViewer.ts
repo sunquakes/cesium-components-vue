@@ -16,6 +16,9 @@ export default defineComponent({
     tk: {
       type: String,
       required: true
+    },
+    color: {
+      type: Cesium.Color
     }
   },
   data() {
@@ -32,7 +35,7 @@ export default defineComponent({
         maximumLevel: 18
       })
 
-      const viewer = newInstance(this.id, vec)
+      const viewer = newInstance(this.id, vec, this.color)
 
       this.$emit('update:modelValue', viewer)
     }
