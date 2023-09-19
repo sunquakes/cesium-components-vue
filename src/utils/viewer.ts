@@ -1,4 +1,5 @@
-import { ImageryColorTheme } from '@/themes/ImageryColorTheme'
+import { ImageryColorTheme } from '../themes/ImageryColorTheme'
+
 export function newInstance(
   containerId: string,
   ImageryProvider: Cesium.ImageryProvider,

@@ -70,17 +70,20 @@ watch(viewer, async (newValue) => {
 ## Example
 
 <div>
-    <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#default-color">
-        <img width="49%" src="https://cesium.sunquakes.com/images/examplesmap-world.png" />
-    </a>
-    <a target="_blank" href="https://cesium.sunquakes.com/guide/popup.html#example">
-        <img width="49%" src="https://cesium.sunquakes.com/images//examplespopup.png" />
-    </a>
+  <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#default-color">
+    <img width="49%" src="https://cesium.sunquakes.com/images/examplesmap-world.png" />
+  </a>
+  <a target="_blank" href="https://cesium.sunquakes.com/guide/popup.html#example">
+    <img width="49%" src="https://cesium.sunquakes.com/images//examplespopup.png" />
+  </a>
 </div>
 <div>
-    <a target="_blank" href="https://cesium.sunquakes.com/guide/material.html#polyline">
-        <img width="49%" src="https://cesium.sunquakes.com/images/examples/polyline-arrors.png" />
-    </a>
+  <a target="_blank" href="https://cesium.sunquakes.com/guide/material.html#polyline">
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/polyline-arrors.png" />
+  </a>
+  <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#custom-color">
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/map-world-custom-color.png" />
+  </a>
 </div>
 
 ## License

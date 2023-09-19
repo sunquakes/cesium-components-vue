@@ -11,7 +11,7 @@ Component
 
 ### Default Color
 
-<TianViewer></TianViewer>
+<TianViewer />
 
 ::: details Click me to view the codes
 
@@ -50,7 +50,7 @@ watch(viewer, async (newValue) => {
 
 ### Custom Color
 
-<TianViewerCustomColor></TianViewerCustomColor>
+<TianViewerCustomColor />
 
 ::: details Click me to view the codes
 
