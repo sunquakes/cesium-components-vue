@@ -11,9 +11,9 @@
 
   .index-examples-item {
     max-width: calc(var(--homepage-width) / 3 - 10px);
-    width: 30%;
+    width: 33.3%;
     display: inline-block;
-    padding: 5px 5px;
+    padding: 2px 4px;
 
     img {
       width: 100%;
@@ -22,9 +22,9 @@
 }
 
 .index-examples-first {
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .index-examples:last-of-type {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }

@@ -46,4 +46,9 @@ footer: Apache-2.0 license | Copyright © 2023-present Shing Rui
       <img src="/images/examples/map-world-custom-color.png" />
     </a>
   </div>
+  <div class="index-examples-item">
+    <a target="_blank" href="/zh/guide/material.html#ellipsefadematerial">
+      <img src="/images/examples/ellipse-fade.gif" />
+    </a>
+  </div>
 </div>
