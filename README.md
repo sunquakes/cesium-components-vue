@@ -89,6 +89,14 @@ watch(viewer, async (newValue) => {
   <a target="_blank" href="https://cesium.sunquakes.com/guide/material.html#ellipsefadematerial">
     <img src="https://cesium.sunquakes.com/images/examples/ellipse-fade.gif" />
   </a>
+  <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#default-color-1">
+    <img src="https://cesium.sunquakes.com/images/examples/amap.png" />
+  </a>
+</div>
+<div>
+  <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#custom-color-1">
+    <img src="https://cesium.sunquakes.com/images/examples/amap-custom-color.png" />
+  </a>
 </div>
 
 ## License

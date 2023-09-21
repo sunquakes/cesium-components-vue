@@ -51,4 +51,16 @@ footer: Apache-2.0 license | Copyright © 2023-present Shing Rui
       <img src="/images/examples/ellipse-fade.gif" />
     </a>
   </div>
+  <div class="index-examples-item">
+    <a target="_blank" href="/zh/guide/viewer.html#default-color-1">
+      <img src="/images/examples/amap.png" />
+    </a>
+  </div>
+</div>
+<div class="index-examples">
+  <div class="index-examples-item">
+    <a target="_blank" href="/zh/guide/viewer.html#custom-color-1">
+      <img src="/images/examples/amap-custom-color.png" />
+    </a>
+  </div>
 </div>
