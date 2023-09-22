@@ -1,6 +1,6 @@
 <template>
   <div class="viewer">
-    <cc-tian-viewer v-model="viewer" :tk="tk" :id="containerId"></cc-tian-viewer>
+    <cc-tian-viewer v-model="viewer" :tk="tk" :id="containerId" :color="color"></cc-tian-viewer>
   </div>
 </template>
 
@@ -8,16 +8,17 @@
 import { ref, watch } from 'vue'
 import { PolylineArrowsMaterialProperty } from 'cesium-components-vue'
 
+const color = Cesium.Color.BLUE
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
-const containerId = 'polyline-arrows'
+const containerId = 'tian-viewer-custom-color'
 
 watch(viewer, async (newValue) => {
   const viewer = newValue as Cesium.Viewer
   if (viewer !== null) {
     viewer.camera.flyTo({
       destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
-    })
+    });
 
     // Add the polyline to the viewer.
     const coordinates = [
@@ -31,9 +32,9 @@ watch(viewer, async (newValue) => {
         material: new PolylineArrowsMaterialProperty(
           viewer,
           positions,
-          Cesium.Color.RED
+          Cesium.Color.PINK
         ),
-        width: 20,
+        width: 10,
         clampToGround: true,
       }
     })
@@ -42,10 +43,10 @@ watch(viewer, async (newValue) => {
 })
 </script>
 
-<style>
+<style scoped>
 .viewer {
   margin-top: 10px;
   width: 100%;
-  height: 300px;
+  height: 100%;
 }
 </style>

@@ -1,5 +1,5 @@
 import { defineClientConfig } from '@vuepress/client'
-import CesiumComponentsVue from 'cesium-components-vue'
+import CesiumComponentsVue from '../../../src/index'
 
 if (typeof window !== 'undefined') window.CESIUM_BASE_URL = '/Cesium'
 

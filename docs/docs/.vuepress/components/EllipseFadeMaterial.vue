@@ -6,11 +6,11 @@
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
-import { PolylineArrowsMaterialProperty } from 'cesium-components-vue'
+import { EllipseFadeMaterialProperty } from '../../../../src/properties/EllipseFadeMaterialProperty'
 
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
-const containerId = 'polyline-arrows'
+const containerId = 'ellipse-fade'
 
 watch(viewer, async (newValue) => {
   const viewer = newValue as Cesium.Viewer
@@ -19,22 +19,17 @@ watch(viewer, async (newValue) => {
       destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
     })
 
-    // Add the polyline to the viewer.
-    const coordinates = [
-      [120.73110547619033, 31.274160096694293],
-      [120.75110547619033, 31.274160096694293],
-    ]
-    const positions = coordinates.map(coordinate => Cesium.Cartesian3.fromDegrees(coordinate[0], coordinate[1]))
+    // Add the Ellipse to the viewer.
+    const position = Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
     const entity = new Cesium.Entity({
-      polyline: {
-        positions: positions,
-        material: new PolylineArrowsMaterialProperty(
-          viewer,
-          positions,
-          Cesium.Color.RED
+      position: position,
+      ellipse: {
+        semiMajorAxis: 1000,
+        semiMinorAxis: 1000,
+        material: new EllipseFadeMaterialProperty(
+          Cesium.Color.RED,
+          3000
         ),
-        width: 20,
-        clampToGround: true,
       }
     })
     viewer.entities.add(entity)

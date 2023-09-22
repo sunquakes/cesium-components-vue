@@ -19,7 +19,11 @@ export default defineComponent({
     },
     color: {
       type: Cesium.Color
-    }
+    },
+    lang: {
+      type: String,
+      default: 'zh_cn' 
+    },
   },
   data() {
     return {}
@@ -30,8 +34,8 @@ export default defineComponent({
   methods: {
     init() {
       const vec = new Cesium.UrlTemplateImageryProvider({
-        subdomains: ['0', '1', '2', '3', '4', '5', '6', '7'],
-        url: `https://t{s}.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=${this.tk}`,
+        subdomains: ['1', '2', '3', '4'],
+        url: `https://webrd0{s}.is.autonavi.com/appmaptile?lang=${this.lang}&size=1&scale=1&style=8&x={x}&y={y}&z={z}`,
         maximumLevel: 18
       })
 
