@@ -14,4 +14,5 @@ export * from './utils/popup'
 
 // properties
 export * from './properties/PolylineArrowsMaterialProperty'
+export * from './properties/EllipseFadeMaterialProperty'
 
