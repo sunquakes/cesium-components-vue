@@ -11,7 +11,7 @@ typeof Cesium !== 'undefined' ?? defineProps({
   color: Cesium.Color
 })
 
-const color = Cesium.Color.GREY
+const color = typeof Cesium !== 'undefined' ? Cesium.Color.GREY : null
 const viewer = ref(null)
 const containerId = 'amap-custom-color'
 

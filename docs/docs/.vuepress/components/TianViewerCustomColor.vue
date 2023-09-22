@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
 
-const color = Cesium.Color.GREY
+const color = typeof Cesium !== 'undefined' ? Cesium.Color.GREY : null
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
 const containerId = 'tian-custom-color'

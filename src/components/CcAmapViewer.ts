@@ -18,7 +18,7 @@ export default defineComponent({
       required: true
     },
     color: {
-      type: Cesium.Color
+      type: typeof Cesium !== 'undefined' ? Cesium.Color : undefined
     },
     lang: {
       type: String,

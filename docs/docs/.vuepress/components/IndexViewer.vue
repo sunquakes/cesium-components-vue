@@ -8,7 +8,7 @@
 import { ref, watch } from 'vue'
 import { PolylineArrowsMaterialProperty } from 'cesium-components-vue'
 
-const color = Cesium.Color.BLUE
+const color = typeof Cesium !== 'undefined' ? Cesium.Color.BLUE : null
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
 const containerId = 'tian-viewer-custom-color'

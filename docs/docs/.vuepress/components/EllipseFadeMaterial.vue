@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref, watch } from 'vue'
-import { EllipseFadeMaterialProperty } from '../../../../src/properties/EllipseFadeMaterialProperty'
+import { EllipseFadeMaterialProperty } from 'cesium-components-vue'
 
 const viewer = ref(null)
 const tk = '9ff8d6599c4e570ec469d56f2cfd185c'
