@@ -71,10 +71,10 @@ watch(viewer, async (newValue) => {
 
 <div>
   <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#default-color">
-    <img width="49%" src="https://cesium.sunquakes.com/images/examplesmap-world.png" />
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/map-world.png" />
   </a>
   <a target="_blank" href="https://cesium.sunquakes.com/guide/popup.html#example">
-    <img width="49%" src="https://cesium.sunquakes.com/images//examplespopup.png" />
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/popup.png" />
   </a>
 </div>
 <div>
@@ -87,15 +87,15 @@ watch(viewer, async (newValue) => {
 </div>
 <div>
   <a target="_blank" href="https://cesium.sunquakes.com/guide/material.html#ellipsefadematerial">
-    <img src="https://cesium.sunquakes.com/images/examples/ellipse-fade.gif" />
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/ellipse-fade.gif" />
   </a>
   <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#default-color-1">
-    <img src="https://cesium.sunquakes.com/images/examples/amap.png" />
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/amap.png" />
   </a>
 </div>
 <div>
   <a target="_blank" href="https://cesium.sunquakes.com/guide/viewer.html#custom-color-1">
-    <img src="https://cesium.sunquakes.com/images/examples/amap-custom-color.png" />
+    <img width="49%" src="https://cesium.sunquakes.com/images/examples/amap-custom-color.png" />
   </a>
 </div>
 
