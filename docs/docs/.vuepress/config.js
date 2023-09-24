@@ -9,7 +9,20 @@ export default defineUserConfig({
   description: 'A vue3.x component library of CesiumJS.',
   head: [
     ['link', { rel: 'icon', href: '/images/logo.png' }],
-    ['link', { rel: 'stylesheet', href: '/Cesium/Widgets/widgets.css' }]
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Widgets/widgets.min.css'
+      }
+    ],
+    [
+      'script',
+      {
+        type: 'text/javascript',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Cesium.min.js'
+      }
+    ]
   ],
   theme: defaultTheme({
     logo: '/images/logo.png',
@@ -25,7 +38,12 @@ export default defineUserConfig({
         sidebar: {
           '/guide/': [
             {
-              children: ['/guide/getting-started.md', '/guide/viewer.md', '/guide/popup.md', '/guide/material.md']
+              children: [
+                '/guide/getting-started.md',
+                '/guide/viewer.md',
+                '/guide/popup.md',
+                '/guide/material.md'
+              ]
             }
           ]
         }
@@ -39,7 +57,12 @@ export default defineUserConfig({
         sidebar: {
           '/zh/guide/': [
             {
-              children: ['/zh/guide/getting-started.md', '/zh/guide/viewer.md', '/zh/guide/popup.md', '/zh/guide/material.md']
+              children: [
+                '/zh/guide/getting-started.md',
+                '/zh/guide/viewer.md',
+                '/zh/guide/popup.md',
+                '/zh/guide/material.md'
+              ]
             }
           ]
         }
