@@ -1,7 +1,7 @@
 {
   "name": "cesium-components-vue",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "author": "Shing Rui <sunquakes@outlook.com>",
   "license": "Apache-2.0 license",
   "main": "./dist/cesium-components-vue.js",

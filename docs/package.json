@@ -1,6 +1,6 @@
 {
   "name": "cesium-components-vue",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "A vue3.x component library of CesiumJS.",
   "main": "index.js",
   "repository": "https://cesium-components-vue.sunquakes.com",
