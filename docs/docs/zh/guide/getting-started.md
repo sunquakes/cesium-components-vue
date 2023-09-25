@@ -9,6 +9,8 @@ title: 开始
 
 ## 安装Cesium
 
+### 下载包
+
 - 从github下载Cesium [https://github.com/CesiumGS/cesium/releases](https://github.com/CesiumGS/cesium/releases)。
 
 - 解压后将Cesium目录拷贝到/public目录。
@@ -18,6 +20,15 @@ title: 开始
 ```html
 <script type="text/javascript" src="/Cesium/Cesium.js"></script>
 <link rel="stylesheet" href="/Cesium/Widgets/widgets.css" />
+```
+
+### 用CDN资源
+
+- 将Cesium的js和css文件引入到index.html。
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Cesium.js" integrity="sha512-x4px4C+PHoAP0tAGI1XA1164gN+pT88gY5wpP4j4Nokmg75f5RJ9HOyzLNx6usrbtmzZFaGbPxdYgeEnptqbqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Widgets/widgets.min.css" integrity="sha512-B5b+YSvAqAIXLgYMg42Tc9KmdoYyGQt2G13igHZaDPitOzeO6hUsMkz8uhNg24eRbPcTivMcQ55/FhyxzcCFVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 ```
 
 ## 开始使用
