@@ -9,6 +9,8 @@ Experience the seamless fusion of `Vue 3`'s cutting-edge capabilities and the im
 
 ## Install Cesium
 
+### Downloading Release Package 
+
 - Download cesium from github [https://github.com/CesiumGS/cesium/releases](https://github.com/CesiumGS/cesium/releases)
 
 - Move Cesium folder to the /public.
@@ -18,6 +20,15 @@ Experience the seamless fusion of `Vue 3`'s cutting-edge capabilities and the im
 ```html
 <script type="text/javascript" src="/Cesium/Cesium.js"></script>
 <link rel="stylesheet" href="/Cesium/Widgets/widgets.css" />
+```
+
+### Using CDN
+
+- Import Cesium js and css file in index.html.
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Cesium.js" integrity="sha512-x4px4C+PHoAP0tAGI1XA1164gN+pT88gY5wpP4j4Nokmg75f5RJ9HOyzLNx6usrbtmzZFaGbPxdYgeEnptqbqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Widgets/widgets.min.css" integrity="sha512-B5b+YSvAqAIXLgYMg42Tc9KmdoYyGQt2G13igHZaDPitOzeO6hUsMkz8uhNg24eRbPcTivMcQ55/FhyxzcCFVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 ```
 
 ## Getting Started

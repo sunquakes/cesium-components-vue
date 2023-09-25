@@ -15,13 +15,6 @@ export default defineUserConfig({
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Widgets/widgets.min.css'
       }
-    ],
-    [
-      'script',
-      {
-        type: 'text/javascript',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/cesium/1.108.0/Cesium.min.js'
-      }
     ]
   ],
   theme: defaultTheme({
