@@ -19,11 +19,6 @@ const containerId = 'tian-viewer'
 watch(viewer, async (newValue) => {
   const viewer = newValue as Cesium.Viewer
   if (viewer !== null) {
-    const tileset = await Cesium.Cesium3DTileset.fromUrl(
-      "/3dtiles/tileset.json"
-    );
-    viewer.scene.primitives.add(tileset);
-
     viewer.camera.flyTo({
       destination: Cesium.Cartesian3.fromDegrees(120.74210547619033, 31.275160096694293, 5000)
     });
