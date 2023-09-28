@@ -1,0 +1,1 @@
+import{f as o,o as t,c as s,a as p,t as a,_}from"./app-c0d611fa.js";const n={class:"popup"},c={class:"popup-content"},l=o({__name:"Popup",props:{modelValue:{type:Object,default:()=>({msg:"Hello World"})}},setup(e){return(u,r)=>(t(),s("div",n,[p("div",c,a(e.modelValue.msg),1)]))}});const i=_(l,[["__file","Popup.vue"]]);export{i as default};
